@@ -6,7 +6,7 @@ locals {
 module "ec2-instance" {
   source  = "OT-CLOUD-KIT/ec2-instance/aws"
   version         = "0.0.3"
-  count           = var.count
+  count           = var.instance_count
   name            = var.name
   tags            = local.tags_map
   instance_type   = var.instance_type
