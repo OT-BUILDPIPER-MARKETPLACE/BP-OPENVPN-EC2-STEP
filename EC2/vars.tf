@@ -4,56 +4,81 @@ variable "region" {
 }
 
 variable "instance_count" {
-  type        = string
-  default     = "1"
-  description = "The number of EC2 instances to create."
-}
-
-variable "name" {
-  type        = string
-  default     = "node-1"
-  description = "The name of the EC2 instance."
-}
-
-variable "instance_type" {
-  type        = string
-  default     = "t2.micro"
-  description = "The type of EC2 instance to launch."
-}
-
-variable "key_name" {
-  type        = string
-  default     = "my-keypair"
-  description = "The name of the key pair to use for SSH access."
-}
-
-variable "volume_size" {
+  description = "Number of EC2 instances to create"
   type        = number
-  default     = 20
-  description = "The size of the root volume in gigabytes (GB)."
-}
-
-variable "subnet_id" {
-  type        = string
-  default     = "subnet-12345678"
-  description = "The ID of the subnet in which to launch the EC2 instance."
-}
-
-variable "sg_id" {
-  type        = list(string)
-  default     = ["sg-abcdefg"]
-  description = "A list of security group IDs to associate with the EC2 instance."
+  default     = 1
 }
 
 variable "ami_id" {
+  description = "AMI ID for the EC2 instances"
   type        = string
   default     = "ami-12345678"
-  description = "The ID of the Amazon Machine Image (AMI) to use for the EC2 instance."
+}
+
+variable "instance_type" {
+  description = "Instance type for the EC2 instances"
+  type        = string
+  default     = "t2.micro"
 }
 
 variable "public_ip" {
+  description = "Whether to assign a public IP address to the EC2 instances"
   type        = bool
-  default     = true
-  description = "Whether to assign a public IP address to the EC2 instance."
+  default     = false
 }
+
+variable "key_name" {
+  description = "Name of the key pair to associate with the EC2 instances"
+  type        = string
+  default     = ""
+}
+
+variable "subnet_id" {
+  description = "ID of the subnet for the EC2 instances"
+  type        = string
+  default     = "subnet-12345678"
+}
+
+variable "sg_ids" {
+  description = "List of security group IDs for the EC2 instances"
+  type        = list(string)
+  default     = []
+}
+
+variable "volume_size" {
+  description = "Size of the root volume for the EC2 instances (in GB)"
+  type        = number
+  default     = 100
+}
+
+variable "volume_type" {
+  description = "Type of the root volume for the EC2 instances"
+  type        = string
+  default     = "gp2"
+}
+
+variable "encrypted_volume" {
+  description = "Whether the root volume should be encrypted"
+  type        = bool
+  default     = false
+}
+
+variable "iam_instance_profile" {
+  description = "IAM instance profile for the EC2 instances"
+  type        = string
+  default     = ""
+}
+
+variable "ec2_name" {
+  description = "Name for the EC2 instances"
+  type        = string
+  default     = "my-ec2-instance"
+}
+
+variable "tags" {
+  description = "Additional tags for the EC2 instances"
+  type        = map(string)
+  default     = {}
+}
+
 
