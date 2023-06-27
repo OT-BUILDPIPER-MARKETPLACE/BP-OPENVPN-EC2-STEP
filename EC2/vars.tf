@@ -3,7 +3,7 @@ variable "region" {
   description = "Region where resource will be created."
 }
 
-variable "count" {
+variable "instance_count" {
   type        = string
   default     = "1"
   description = "The number of EC2 instances to create."
