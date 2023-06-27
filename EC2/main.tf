@@ -3,18 +3,21 @@ locals {
   subnet_id = var.subnet_id
 }
 
-module "ec2-instance" {
-  source  = "OT-CLOUD-KIT/ec2-instance/aws"
-  version         = "0.0.3"
-  count           = var.instance_count
-  name            = var.name
-  tags            = local.tags_map
-  instance_type   = var.instance_type
-  key_name        = var.key_name
-  volume_size     = var.volume_size
-  subnet          = var.subnet_id
-  security_groups = var.sg_id
-  ami_id          = var.ami_id
-  public_ip       = var.public_ip
+module "ec2_instance" {
+  source               = "OT-CLOUD-KIT/ec2-instance/aws"
+  version              = "0.0.3"
+  count                = var.instance_count
+  ami_id               = var.ami_id
+  instance_type        = var.instance_type
+  public_ip            = var.public_ip
+  key_name             = var.key_name
+  subnet               = var.subnet_id
+  security_groups      = var.sg_ids
+  volume_size          = var.volume_size
+  volume_type          = var.volume_type
+  encrypted_volume     = var.encrypted_volume
+  iam_instance_profile = var.iam_instance_profile
+  ec2_name             = var.ec2_name
+  tags                 = var.tags
 }
 
