@@ -1,5 +1,5 @@
 locals {
-  sg_id     = var.sg_id
+  sg_id     = var.sg_ids
   subnet_id = var.subnet_id
 }
 
