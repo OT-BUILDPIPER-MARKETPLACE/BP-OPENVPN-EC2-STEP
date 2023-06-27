@@ -3,8 +3,8 @@ locals {
   subnet_id = var.subnet_id
 }
 
-module "instance" {
-  source          = "OT-CLOUD-KIT/terraform-aws-ec2-instance"
+module "ec2-instance" {
+  source  = "OT-CLOUD-KIT/ec2-instance/aws"
   version         = "0.0.3"
   count           = var.count
   name            = var.name
