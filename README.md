@@ -1,9 +1,9 @@
-# BP-TF-VPN-EC2-STEP
+# BP-OPENVPN-EC2-STEP
 
 I'll steup EC2 using opstree tf module
 
 ## Setup
-* Clone the code available at [BP-TF-VPN-EC2-STEP](https://github.com/OT-BUILDPIPER-MARKETPLACE/BP-TF-VPN-EC2-STEP)
+* Clone the code available at [BP-OPENVPN-EC2-STEP](https://github.com/OT-BUILDPIPER-MARKETPLACE/BP-OPENVPN-EC2-STEP)
 * Build the docker image
 
 ```
