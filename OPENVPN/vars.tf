@@ -24,7 +24,7 @@ variable "instance_type" {
 variable "public_ip" {
   description = "Whether to assign a public IP address to the EC2 instances"
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "key_name" {
@@ -33,13 +33,13 @@ variable "key_name" {
   default     = ""
 }
 
-variable "subnet_id" {
+variable "public_subnet_id" {
   description = "ID of the subnet for the EC2 instances"
   type        = string
   default     = "subnet-12345678"
 }
 
-variable "sg_ids" {
+variable "vpn_sg_ids" {
   description = "List of security group IDs for the EC2 instances"
   type        = list(string)
   default     = []
