@@ -1,5 +1,5 @@
 locals {
-  sg_ids     = var.vpn_sg_ids
+  vpn_sg_ids     = var.vpn_sg_ids
   public_subnet_id = var.public_subnet_id
 }
 
